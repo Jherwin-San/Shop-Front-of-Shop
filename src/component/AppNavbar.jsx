@@ -119,7 +119,7 @@ export default function AppNavbar({ darkMode, setDarkMode }) {
   return (
     <Navbar
       fullWidth={true}
-      className="sticky top-0 z-10 mx-auto min-w-full max-w-screen-xl px-4 py-2 border-none lg:px-8 lg:py-4 bg-nahida-300 text-black dark:bg-shogun-850 dark:text-white"
+      className="sticky top-0 z-50 mx-auto min-w-full max-w-screen-xl px-4 py-2 border-none lg:px-8 lg:py-4 bg-nahida-300 text-black dark:bg-shogun-850 dark:text-white"
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between bg-transparent">
         <div className="px-4 cursor-pointer" onClick={switchMode}>
@@ -137,7 +137,7 @@ export default function AppNavbar({ darkMode, setDarkMode }) {
         <Typography
           as={Link}
           to="/"
-          className="mr-4 cursor-pointer py-1.5 font-medium"
+          className="cursor-pointer py-1.5 font-medium"
         >
           {!darkMode ? (
             <img

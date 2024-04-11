@@ -23,7 +23,7 @@ export default function PopularProducts() {
         const productArray = data.products.slice(0, 9).map((product) => {
           return (
             <ProductChild
-              styleOut=" lg:w-[18rem] md:w-52 w-40 shadow-xl shadow-nahida-300 dark:shadow-shogun-300"
+              styleOut=" lg:w-[18rem] md:w-52 w-32  shadow-xl shadow-nahida-300 dark:shadow-shogun-300"
               buttonColor="text-nahida-400"
               key={product._id}
               _id={product._id}
@@ -52,6 +52,19 @@ export default function PopularProducts() {
         </div>
         <Carousel
           className="rounded-3xl overflow-hidden 2xl:w-3/4 w-full lg:h-[37rem] md:h-[30rem] h-[22rem] mb-10"
+          navigation={({ setActiveIndex, activeIndex, length }) => (
+            <div className="absolute bottom-4 left-2/4 z-40 flex -translate-x-2/4 gap-2">
+              {new Array(length).fill("").map((_, i) => (
+                <span
+                  key={i}
+                  className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
+                    activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+                  }`}
+                  onClick={() => setActiveIndex(i)}
+                />
+              ))}
+            </div>
+          )}
           autoplay
         >
           <div className=" relative md:h-full h-[25rem] w-full bg-nahida-200 dark:bg-shogun-400">

@@ -143,7 +143,7 @@ export default function UpdateProduct({ product, productName, fetchData }) {
                   <img
                     src={image ? URL.createObjectURL(image) : upload_area}
                     alt=""
-                    className="cursor-pointer h-[18rem] w-[18rem] object-cover"
+                    className="cursor-pointer h-[18rem] w-[18rem] object-contain"
                   />
                 </label>
                 <input

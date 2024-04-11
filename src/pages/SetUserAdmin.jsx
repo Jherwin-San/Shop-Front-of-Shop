@@ -61,7 +61,7 @@ export default function SetUserAdmin() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="blue" className="py-3  w-[12rem]">
+                <Button color="blue" className="py-3  md:w-[12rem]">
                   Add New Product
                 </Button>
               </NavLink>
@@ -74,12 +74,12 @@ export default function SetUserAdmin() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="amber" className="py-3  w-[12rem]">
+                <Button color="amber" className="py-3  md:w-[12rem]">
                   Products Displayed
                 </Button>
               </NavLink>
             </div>
-            <div className="flex justify-center items-center w-full ">
+            <div className="flex justify-center items-center md:w-full ">
               <NavLink
                 to="/allorders"
                 className="my-3 mx-2"
@@ -89,7 +89,7 @@ export default function SetUserAdmin() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="teal" className="py-3  w-[12rem]">
+                <Button color="teal" className="py-3  md:w-[12rem]">
                   Show User Orders
                 </Button>
               </NavLink>
@@ -102,7 +102,7 @@ export default function SetUserAdmin() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="deep-purple" className="py-3  w-[12rem]">
+                <Button color="deep-purple" className="py-3  md:w-[12rem]">
                   Show All Products
                 </Button>
               </NavLink>
@@ -146,7 +146,7 @@ export default function SetUserAdmin() {
                           key={user._id}
                           className="grid justify-center w-full"
                         >
-                          <td className=" lg:w-[70rem] md:w-[40rem] w-[26rem] grid justify-center">
+                          <td className=" lg:w-[70rem] md:w-[40rem] w-[22rem] grid justify-center">
                             <Card
                               key={user._id}
                               className="rounded-xl lg:border-4 border-2 border-gray-900 "
@@ -155,14 +155,14 @@ export default function SetUserAdmin() {
                                 <Accordion
                                   key={user._id}
                                   open={open === user._id}
-                                  className="lg:w-[70rem] md:w-[40rem] w-[24rem] grid grid-flow-row justify-center"
+                                  className="lg:w-[70rem] md:w-[40rem] w-[20rem] grid grid-flow-row justify-center"
                                 >
-                                  <div className="lg:w-[70rem] md:w-[40rem] w-[24rem] grid grid-cols-2 items-center justify-center">
+                                  <div className="lg:w-[70rem] md:w-[40rem] w-[19rem] grid grid-cols-2 items-center justify-center">
                                     <div className="grid justify-start md:grid-cols-2 grid-flow-row ">
                                       <div className="font-bold">
                                         User's Name:
                                       </div>
-                                      <div className="px-10 lg:w-[30rem] text-pretty w-[14rem] ">
+                                      <div className="px-10 lg:w-[30rem] text-pretty md:w-[14rem] w-[10rem]">
                                         {user.firstName} {user.lastName}
                                       </div>
                                     </div>

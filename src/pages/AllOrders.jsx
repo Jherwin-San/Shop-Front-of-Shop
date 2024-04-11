@@ -102,7 +102,7 @@ export default function AllOrders() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="blue" className="py-3  w-[12rem]">
+                <Button color="blue" className="py-3  md:w-[12rem]">
                   Add New Product
                 </Button>
               </NavLink>
@@ -115,7 +115,7 @@ export default function AllOrders() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="amber" className="py-3  w-[12rem]">
+                <Button color="amber" className="py-3  md:w-[12rem]">
                   Products Displayed
                 </Button>
               </NavLink>
@@ -130,7 +130,7 @@ export default function AllOrders() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="deep-purple" className="py-3  w-[12rem]">
+                <Button color="deep-purple" className="py-3  md:w-[12rem]">
                   Show All Products
                 </Button>
               </NavLink>
@@ -143,7 +143,7 @@ export default function AllOrders() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="red" className="py-3 w-[12rem]">
+                <Button color="red" className="py-3 md:w-[12rem]">
                   Set User As Admin
                 </Button>
               </NavLink>
@@ -189,7 +189,7 @@ export default function AllOrders() {
                           key={user._id}
                           className="grid justify-center w-full"
                         >
-                          <td className=" lg:w-[70rem] md:w-[40rem] w-[26rem] grid justify-center">
+                          <td className=" lg:w-[70rem] md:w-[40rem] w-[22rem] grid justify-center">
                             <Card
                               key={user._id}
                               className="rounded-xl lg:border-4 border-2 border-gray-900 "
@@ -198,12 +198,12 @@ export default function AllOrders() {
                                 <Accordion
                                   key={user._id}
                                   open={open === user._id}
-                                  className="lg:w-[70rem] md:w-[40rem] w-[24rem] grid grid-flow-row justify-center"
+                                  className="lg:w-[70rem] md:w-[40rem] w-[20rem] grid grid-flow-row justify-center"
                                 >
-                                  <div className="lg:w-[70rem] md:w-[40rem] w-[24rem] grid grid-cols-2 items-center justify-center">
+                                  <div className="lg:w-[70rem] md:w-[40rem] w-[19rem] grid grid-cols-2 items-center justify-center">
                                     <div className="grid justify-start md:grid-cols-2 grid-flow-row ">
                                       <div className="font-bold">User:</div>
-                                      <div className="px-10 lg:w-[30rem] text-pretty w-[14rem] ">
+                                      <div className="px-10 lg:w-[30rem] text-pretty md:w-[14rem] w-[10rem]">
                                         {user.userName}
                                       </div>
                                     </div>
@@ -249,7 +249,7 @@ export default function AllOrders() {
                                             <th className="text-black dark:text-white  bg-nahida-300 dark:bg-shogun-850 p-4 ">
                                               <Typography
                                                 variant="small"
-                                                className="font-normal leading-none opacity-70 "
+                                                className="font-normal text-pretty leading-none opacity-70 "
                                               >
                                                 Product Name
                                               </Typography>
@@ -307,7 +307,7 @@ export default function AllOrders() {
                                                     <Typography
                                                       variant="small"
                                                       color="blue-gray"
-                                                      className="font-normal"
+                                                      className="font-normal lg:w-[20rem] md:[14rem] w-[5rem]"
                                                     >
                                                       {productName}
                                                     </Typography>

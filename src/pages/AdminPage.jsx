@@ -105,7 +105,7 @@ export default function AdminPage() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="blue" className="py-3  w-[12rem]">
+                <Button color="blue" className="py-3  md:w-[12rem]">
                   Add New Product
                 </Button>
               </NavLink>
@@ -118,7 +118,7 @@ export default function AdminPage() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="amber" className="py-3  w-[12rem]">
+                <Button color="amber" className="py-3  md:w-[12rem]">
                   Products Displayed
                 </Button>
               </NavLink>
@@ -133,7 +133,7 @@ export default function AdminPage() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="teal" className="py-3  w-[12rem]">
+                <Button color="teal" className="py-3  md:w-[12rem]">
                   Show User Orders
                 </Button>
               </NavLink>
@@ -146,7 +146,7 @@ export default function AdminPage() {
                   boxShadow: "-4px 4px 10px #000000",
                 }}
               >
-                <Button color="red" className="py-3 w-[12rem]">
+                <Button color="red" className="py-3 md:w-[12rem]">
                   Set User As Admin
                 </Button>
               </NavLink>
@@ -170,19 +170,22 @@ export default function AdminPage() {
                           {" "}
                           All Products List
                         </div>
-                        <div className="grid justify-center px-5">
-                          <Input
+                        <div className="grid justify-center px-5 w-[10rem]">
+                          <input
                             ref={inputRef}
                             type="text"
                             value={search}
                             size="lg"
                             placeholder="Search"
                             onChange={handleOnChange}
-                            className="bg-white !border-t-green-900 pl-9 placeholder:text-green-900 focus:!border-green-900 dark:!border-t-deep-purple-900 dark:placeholder:text-deep-purple-900 dark:focus:!border-deep-purple-900"
-                            labelProps={{
-                              className:
-                                "before:content-none after:content-none",
-                            }}
+                            className="bg-white text-green-900  dark:text-deep-purple-900  pl-9 placeholder:text-green-900 dark:placeholder:text-deep-purple-900  md:w-[15rem] w-[8rem] py-3 rounded-xl "
+                            // labelProps={{
+                            //   className:
+                            //     "before:content-none after:content-none",
+                            // }}
+                            // containerProps={{
+                            //   className: "w-[5rem] bg-black",
+                            // }}
                           />
                         </div>
                       </div>
@@ -207,7 +210,7 @@ export default function AdminPage() {
                           key={product._id}
                           className="grid justify-center w-full"
                         >
-                          <td className=" lg:w-[70rem] md:w-[40rem] w-[26rem] grid justify-center">
+                          <td className=" lg:w-[70rem] md:w-[40rem] w-[22rem] grid justify-center">
                             <Card
                               key={product._id}
                               className="rounded-xl lg:border-4 border-2 border-gray-900 "
@@ -216,9 +219,9 @@ export default function AdminPage() {
                                 <Accordion
                                   key={product._id}
                                   open={open === product._id}
-                                  className="lg:w-[70rem] md:w-[40rem] w-[24rem] grid grid-flow-row justify-center"
+                                  className="lg:w-[70rem] md:w-[40rem] w-[20rem] grid grid-flow-row justify-center"
                                 >
-                                  <div className="lg:w-[70rem] md:w-[40rem] w-[24rem] grid grid-flow-col items-center justify-center">
+                                  <div className="lg:w-[70rem] md:w-[40rem] w-[19rem] grid grid-flow-col items-center justify-center">
                                     <div className="grid justify-start md:grid-flow-col grid-flow-row ">
                                       <div className="font-bold text-center">
                                         Product Name:
@@ -228,16 +231,11 @@ export default function AdminPage() {
                                       </div>
                                     </div>
                                     <div className="grid grid-flow-col justify-end items-center ">
-                                      <div className="grid lg:grid-flow-col grid-flow-row justify-center">
+                                      <div className="grid md:grid-flow-col grid-flow-row justify-center">
                                         <div className="flex lg:flex-row-reverse flex-row justify-end">
                                           <UpdateProduct
                                             product={product._id}
                                             productName={product.name}
-                                            fetchData={fetchData}
-                                          />
-                                          <PopularStatus
-                                            product={product._id}
-                                            isPopular={product.isPopular}
                                             fetchData={fetchData}
                                           />
                                         </div>
@@ -245,11 +243,6 @@ export default function AdminPage() {
                                           <ActivateProduct
                                             product={product._id}
                                             isActive={product.isActive}
-                                            fetchData={fetchData}
-                                          />
-                                          <NewStatus
-                                            product={product._id}
-                                            isNew={product.isNew}
                                             fetchData={fetchData}
                                           />
                                         </div>
@@ -342,6 +335,18 @@ export default function AdminPage() {
                                           <div>
                                             {product.isNew ? "New" : "Not New"}
                                           </div>
+                                        </div>
+                                        <div className="grid grid-flow-col justify-center">
+                                          <PopularStatus
+                                            product={product._id}
+                                            isPopular={product.isPopular}
+                                            fetchData={fetchData}
+                                          />
+                                          <NewStatus
+                                            product={product._id}
+                                            isNew={product.isNew}
+                                            fetchData={fetchData}
+                                          />
                                         </div>
                                       </div>
                                     </div>
