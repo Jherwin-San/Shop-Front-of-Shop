@@ -87,10 +87,10 @@ export default function ProductView() {
       className="min-h-dvh w-full flex justify-center items-center py-10  bg-nahida-650 dark:bg-shogun-200 bg-blend-overlay bg-pexel3 dark:bg-pexel4"
       style={{ overflowX: "hidden" }}
     >
-      <div className="md:w-11/12 w-full md:my-5 my-0 grid grid-flow-row gap-y-3 place-items-center items-center">
-        <div className="bg-white rounded-lg">
+      <div className="md:w-11/12 w-full flex flex-col justify-center  md:my-5 my-0 container">
+        <div className="flex justify-center">
           <Breadcrumbs>
-            <Typography as={Link} to="/" className="opacity-60 px-8">
+            <Typography as={Link} to="/" className="opacity-60 md:px-8">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -100,19 +100,16 @@ export default function ProductView() {
                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
               </svg>
             </Typography>
-            <Typography as={Link} to="/products" className="opacity-60 px-8">
+            <Typography as={Link} to="/products" className="opacity-60 md:px-8">
               <span>Products</span>
             </Typography>
-            <Typography
-              className="px-8 text-pretty md:w-full w-[8rem] "
-              disabled
-            >
+            <Typography className="md:px-8 text-pretty" disabled>
               {name}
             </Typography>
           </Breadcrumbs>
         </div>
 
-        <div className="w-11/12 md:mt-10 mt-7 grid grid-flow-row justify-center items-center shadow-3xl rounded-3xl shadow-nahida-200 dark:shadow-black dark:bg-shogun-900 bg-white md:p-10 p-5">
+        <div className="w-full md:mt-10 mt-7 grid grid-flow-row justify-center items-center shadow-3xl rounded-3xl shadow-nahida-200 dark:shadow-black dark:bg-shogun-900 bg-white md:p-10 p-5">
           <div className="grid grid-cols-2">
             <div className="grid place-items-center mr-[2rem] ">
               <img

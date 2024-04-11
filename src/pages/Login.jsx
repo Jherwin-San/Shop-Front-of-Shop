@@ -117,7 +117,7 @@ export default function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <div className=" absolute flex lg:left-64 md:left-56 left-44">
+                <div className=" absolute flex lg:left-64 md:left-56 left-40">
                   <Checkbox
                     icon={
                       <svg
