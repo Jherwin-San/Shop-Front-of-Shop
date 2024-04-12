@@ -150,7 +150,7 @@ export default function AllOrders() {
             </div>
           </div>
           <div className="w-full justify-center grid items-center">
-            <Card className="h-full lg:w-[80rem] md:px-10  overflow-x-hidden  text-black dark:text-white  bg-nahida-300 dark:bg-shogun-850 rounded-3xl ">
+            <Card className="h-full xl:w-[70rem] lg:w-[65rem]  md:px-10  overflow-x-hidden  text-black dark:text-white  bg-nahida-300 dark:bg-shogun-850 rounded-3xl ">
               <table
                 className="w-full table-auto text-left "
                 // style={{
@@ -189,7 +189,7 @@ export default function AllOrders() {
                           key={user._id}
                           className="grid justify-center w-full"
                         >
-                          <td className=" lg:w-[70rem] md:w-[40rem] w-[22rem] grid justify-center">
+                          <td className=" lg:w-[60rem] md:w-[40rem] w-[22rem] grid justify-center">
                             <Card
                               key={user._id}
                               className="rounded-xl lg:border-4 border-2 border-gray-900 "
@@ -198,9 +198,9 @@ export default function AllOrders() {
                                 <Accordion
                                   key={user._id}
                                   open={open === user._id}
-                                  className="lg:w-[70rem] md:w-[40rem] w-[20rem] grid grid-flow-row justify-center"
+                                  className="lg:w-[60rem] md:w-[40rem] w-[18rem] grid grid-flow-row justify-center"
                                 >
-                                  <div className="lg:w-[70rem] md:w-[40rem] w-[19rem] grid grid-cols-2 items-center justify-center">
+                                  <div className="lg:w-[60rem] md:w-[40rem] w-[18rem] grid grid-cols-2 items-center justify-center">
                                     <div className="grid justify-start md:grid-cols-2 grid-flow-row ">
                                       <div className="font-bold">User:</div>
                                       <div className="px-10 lg:w-[30rem] text-pretty md:w-[14rem] w-[10rem]">

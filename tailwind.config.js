@@ -75,7 +75,9 @@ export default withMT( {
 
       },
       screens: {
-        "wide": "1440px"
+        "wide": "1440px",
+        'xl': '1300px',
+        '2xl': '1440px',
       },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',

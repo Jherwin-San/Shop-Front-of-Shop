@@ -77,7 +77,7 @@ export default function ViewActiveProducts({ darkMode }) {
           return (
             <ProductChild
               key={product._id}
-              styleOut=" lg:w-[16rem] md:w-[14rem] w-[11rem] shadow-3xl shadow-nahida-500 dark:shadow-shogun-900 md:mt-12 mt-8 "
+              styleOut="2xl:w-[16rem] md:w-[13rem] w-[11rem] shadow-3xl shadow-nahida-500 dark:shadow-shogun-900 md:mt-12 mt-8 "
               buttonColor="text-nahida-400"
               _id={product._id}
               name={product.name}
@@ -128,7 +128,7 @@ export default function ViewActiveProducts({ darkMode }) {
               </Button>
             </div>
           </div>
-          <div className="grid 2xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 place-items-center">
+          <div className="grid xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 place-items-center">
             {activeProducts.length > 0 ? (
               // activeProducts
               <>{currentPosts}</>

@@ -15,7 +15,7 @@ const Footer = ({ darkMode }) => {
         {
           label: "About",
           popoverTitle: "About",
-          popoverContent: ` PlantShop is a solo project made for educational purposes only.`,
+          popoverContent: `PlantShop is a solo React JS project made for educational purposes only.`,
           enabled: true, // Enable or disable the popover
         },
         {
@@ -229,7 +229,7 @@ const Footer = ({ darkMode }) => {
               className="mb-4 text-center font-normal text-black dark:text-white md:mb-0"
             >
               &copy; {currentYear} - Made by San Juan, All info and images that
-              came from Swansons Nursery are used for educational purpose.
+              came from Swansons Nursery are used for educational purposes.
             </Typography>
             <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
               {/* Social media icons */}

@@ -153,7 +153,7 @@ export default function AdminPage() {
             </div>
           </div>
           <div className="w-full justify-center grid items-center">
-            <Card className="h-full lg:w-[80rem] text-black dark:text-white  bg-nahida-300 dark:bg-shogun-850 rounded-3xl md:px-10  overflow-x-hidden">
+            <Card className="h-full xl:w-[70rem] lg:w-[65rem]  text-black dark:text-white  bg-nahida-300 dark:bg-shogun-850 rounded-3xl md:px-10  overflow-x-hidden">
               <table
                 className="w-full table-auto text-left"
                 // style={{
@@ -210,7 +210,7 @@ export default function AdminPage() {
                           key={product._id}
                           className="grid justify-center w-full"
                         >
-                          <td className=" lg:w-[70rem] md:w-[40rem] w-[22rem] grid justify-center">
+                          <td className="lg:w-[60rem] md:w-[40rem] w-[22rem] grid justify-center">
                             <Card
                               key={product._id}
                               className="rounded-xl lg:border-4 border-2 border-gray-900 "
@@ -219,9 +219,9 @@ export default function AdminPage() {
                                 <Accordion
                                   key={product._id}
                                   open={open === product._id}
-                                  className="lg:w-[70rem] md:w-[40rem] w-[20rem] grid grid-flow-row justify-center"
+                                  className=" lg:w-[60rem] md:w-[40rem] w-[18rem] grid grid-flow-row justify-center"
                                 >
-                                  <div className="lg:w-[70rem] md:w-[40rem] w-[19rem] grid grid-flow-col items-center justify-center">
+                                  <div className="lg:w-[60rem] md:w-[40rem] w-[18rem] grid grid-flow-col items-center justify-center">
                                     <div className="grid justify-start md:grid-flow-col grid-flow-row ">
                                       <div className="font-bold text-center">
                                         Product Name:
@@ -277,11 +277,7 @@ export default function AdminPage() {
                                       <div className="flex justify-center items-center">
                                         <img
                                           src={product.image}
-                                          style={{
-                                            height: "120px",
-                                            width: "auto",
-                                            objectFit: "cover",
-                                          }}
+                                          className=" w-auto md:h-[10rem] h-[4.5rem]  object-cover rounded-lg"
                                         />
                                       </div>
                                       <div className="pl-5">

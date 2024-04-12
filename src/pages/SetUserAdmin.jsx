@@ -109,7 +109,7 @@ export default function SetUserAdmin() {
             </div>
           </div>
           <div className="w-full justify-center grid items-center">
-            <Card className="h-full lg:w-[80rem] text-black dark:text-white  bg-nahida-300 dark:bg-shogun-850 md:px-10 rounded-3xl  overflow-x-hidden">
+            <Card className="h-full xl:w-[70rem] lg:w-[65rem]  text-black dark:text-white  bg-nahida-300 dark:bg-shogun-850 md:px-10 rounded-3xl  overflow-x-hidden">
               <table
                 className="w-full table-auto text-left"
                 // style={{
@@ -146,7 +146,7 @@ export default function SetUserAdmin() {
                           key={user._id}
                           className="grid justify-center w-full"
                         >
-                          <td className=" lg:w-[70rem] md:w-[40rem] w-[22rem] grid justify-center">
+                          <td className=" lg:w-[60rem] md:w-[40rem] w-[22rem] grid justify-center">
                             <Card
                               key={user._id}
                               className="rounded-xl lg:border-4 border-2 border-gray-900 "
@@ -155,9 +155,9 @@ export default function SetUserAdmin() {
                                 <Accordion
                                   key={user._id}
                                   open={open === user._id}
-                                  className="lg:w-[70rem] md:w-[40rem] w-[20rem] grid grid-flow-row justify-center"
+                                  className="lg:w-[60rem] md:w-[40rem] w-[18rem] grid grid-flow-row justify-center"
                                 >
-                                  <div className="lg:w-[70rem] md:w-[40rem] w-[19rem] grid grid-cols-2 items-center justify-center">
+                                  <div className="lg:w-[60rem] md:w-[40rem] w-[18rem] grid grid-cols-2 items-center justify-center">
                                     <div className="grid justify-start md:grid-cols-2 grid-flow-row ">
                                       <div className="font-bold">
                                         User's Name:
