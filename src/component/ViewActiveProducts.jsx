@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useReducer } from "react";
-import { Button, Input } from "@material-tailwind/react";
+import { Button, Input, Select, Option } from "@material-tailwind/react";
 import { ProductChild, PaginationProd } from "../component";
 
 const priceReducer = (state, action) => {
@@ -17,6 +17,8 @@ export default function ViewActiveProducts({ darkMode }) {
 
   const [activeProducts, setActiveProducts] = useState([]);
   const [search, setSearch] = useState("");
+  const [select, setSelect] = useState("");
+  const [category, setCategory] = useState([]);
   const [show, setShow] = useState(false);
   const [value1, setValue1] = useState(0);
   const [value2, setValue2] = useState(900);
@@ -62,12 +64,30 @@ export default function ViewActiveProducts({ darkMode }) {
     fetch(`${import.meta.env.VITE_APP_API_BASE_URL}/shop/products/active`)
       .then((res) => res.json())
       .then((data) => {
+        const uniqueCategories = new Set();
+        data.products.forEach((product) => {
+          uniqueCategories.add(product.category);
+        });
+
+        // Convert the Set to an array if needed
+        const uniqueCategoriesArray = Array.from(uniqueCategories);
+
+        // Now you have an array of unique categories
+        // console.log(uniqueCategoriesArray);
+        setCategory(uniqueCategoriesArray);
+
         const filteredProducts = data.products.filter((product) => {
+          let matchCategory = true;
+          if (select && select !== "" && product.category !== select) {
+            matchCategory = false;
+          }
           switch (true) {
             case !product.name.toLowerCase().includes(search.toLowerCase()):
               return false;
             case product.price < priceState.minPrice ||
               product.price > priceState.maxPrice:
+              return false;
+            case !matchCategory:
               return false;
             default:
               return true;
@@ -89,7 +109,7 @@ export default function ViewActiveProducts({ darkMode }) {
         });
         setActiveProducts(productArray);
       });
-  }, [search, priceState]);
+  }, [search, priceState, select]);
 
   return (
     <>
@@ -277,6 +297,27 @@ export default function ViewActiveProducts({ darkMode }) {
                     className=" range pr-6 accent-green-900 dark:accent-deep-purple-900"
                   />
                 </div>
+              </div>
+
+              <div id="select" className="py-4">
+                <Select
+                  variant="standard"
+                  color={!darkMode ? "green" : "deep-purple"}
+                  label="Select Category"
+                  value={select}
+                  size="lg"
+                  onChange={(val) => {
+                    console.log("Selected value:", val);
+                    setSelect(val);
+                  }}
+                >
+                  {category.map((data, index) => (
+                    <Option key={data} value={data}>
+                      {data}
+                    </Option>
+                  ))}
+                  <Option value="">Show All</Option>
+                </Select>
               </div>
             </div>
           </div>

@@ -8,6 +8,8 @@ import { TabPane, StarRating } from "../component";
 export default function ProductView() {
   const { user } = useContext(UserContext);
   const [name, setName] = useState("");
+  const [othername, setOtherName] = useState("");
+  const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
@@ -28,6 +30,8 @@ export default function ProductView() {
           return;
         }
         setName(data.product.name);
+        setOtherName(data.product.otherName);
+        setCategory(data.product.category);
         setDescription(data.product.description);
         setPrice(data.product.price);
         setLoading(false);
@@ -122,10 +126,17 @@ export default function ProductView() {
               <h1 className="font-bold lg:py-3 lg:text-4xl text-2xl text-black dark:text-white">
                 {name}
               </h1>
-              <div>
+              <h3 className=" lg:-mt-[2rem] font-light italic lg:text-3xl text-lg text-black dark:text-white">
+                ' {othername} '
+              </h3>
+              <div className="lg:py-0 py-1">
                 <StarRating />
               </div>
-              <div className="grid grid-cols-2 lg:my-0 my-3">
+              <div className="grid md:grid-cols-4 grid-flow-col lg:text-2xl text-sm">
+                <p className="font-semibold">Category:</p>{" "}
+                <span>{category}</span>
+              </div>
+              <div className="grid grid-flow-col lg:py-0 py-2">
                 <div className="flex items-center lg:text-2xl text-sm">
                   <h3 className=" text-black dark:text-white">
                     <span className="font-bold">&#8369; </span>
