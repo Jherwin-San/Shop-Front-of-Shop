@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import UserContext from "../UserContext";
 import { Button, Breadcrumbs, Typography } from "@material-tailwind/react";
 import { TabPane, StarRating } from "../component";
+import { Image } from "cloudinary-react";
 
 export default function ProductView() {
   const { user } = useContext(UserContext);
@@ -116,8 +117,9 @@ export default function ProductView() {
         <div className="w-full md:mt-10 mt-7 grid grid-flow-row justify-center items-center shadow-3xl rounded-3xl shadow-nahida-200 dark:shadow-black dark:bg-shogun-900 bg-white md:p-10 p-5">
           <div className="grid grid-cols-2">
             <div className="grid place-items-center mr-[2rem] ">
-              <img
+              <Image
                 src={imagePath}
+                cloudName={import.meta.env.VITE_APP_API_CLOUDINARY_NAME}
                 className=" border-4 border-gray-500
                 lg:h-[40rem] lg:w-[40rem] md:w-[20rem] md:h-[20rem] w-[17rem] h-[17rem] rounded-xl object-cover "
               />

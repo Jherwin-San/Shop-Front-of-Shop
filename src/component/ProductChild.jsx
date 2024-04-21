@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { StarRating } from "../component";
+import { Image } from "cloudinary-react";
 import { Link } from "react-router-dom";
 
 export default function ProductChild(props) {
@@ -21,9 +22,10 @@ export default function ProductChild(props) {
           floated={false}
           className="lg:h-[18rem] md:h-[14rem] h-[6rem] rounded-2xl"
         >
-          <img
+          <Image
             src={props.image}
             alt={props.name}
+            cloudName={import.meta.env.VITE_APP_API_CLOUDINARY_NAME}
             className="h-full w-full object-cover"
           />
         </CardHeader>
