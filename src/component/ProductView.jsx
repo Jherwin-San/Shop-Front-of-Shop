@@ -132,7 +132,7 @@ export default function ProductView() {
               <div className="lg:py-0 py-1">
                 <StarRating />
               </div>
-              <div className="grid md:grid-cols-4 grid-flow-col lg:text-2xl text-sm">
+              <div className="grid md:grid-cols-4 grid-flow-col lg:text-2xl text-sm  text-black dark:text-white">
                 <p className="font-semibold">Category:</p>{" "}
                 <span>{category}</span>
               </div>
