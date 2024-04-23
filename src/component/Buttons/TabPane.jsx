@@ -6,13 +6,9 @@ import {
   TabPanel,
   Button,
 } from "@material-tailwind/react";
-import { useContext } from "react";
 import { Review, UserRating } from "../../component";
-import UserContext from "../../UserContext";
-import { Link, useLocation } from "react-router-dom";
 
 export default function TabPane({ description, productId }) {
-  const { user } = useContext(UserContext);
   const data = [
     {
       label: "Instructions",
@@ -51,14 +47,7 @@ export default function TabPane({ description, productId }) {
           value="vue"
           className="text-pretty bg-white h-[12rem] overflow-x-scroll"
         >
-          {user !== null ? (
-            <UserRating productId={productId} />
-          ) : (
-            <Button as={Link} to="/login">
-              Leave a comment
-            </Button>
-          )}
-
+          <UserRating productId={productId} />
           <Review productId={productId} />
         </TabPanel>
         {data.map(({ value, desc }) => (
