@@ -63,7 +63,7 @@ export default function AppNavbar({ darkMode, setDarkMode }) {
             </svg>
             Products
           </Typography>
-          {location.pathname === "/" && ( // Check if on home page
+          {/* {location.pathname === "/" && ( // Check if on home page
             <>
               <Typography
                 as="li"
@@ -110,7 +110,7 @@ export default function AppNavbar({ darkMode, setDarkMode }) {
                 </a>
               </Typography>
             </>
-          )}
+          )} */}
         </>
       )}
     </ul>
