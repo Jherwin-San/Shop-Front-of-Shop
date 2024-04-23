@@ -213,7 +213,7 @@ export default function ProductView() {
             </div>
           </div>
           <div className="pt-10">
-            <TabPane description={description} />
+            <TabPane description={description} productId={productId} />
           </div>
         </div>
       </div>

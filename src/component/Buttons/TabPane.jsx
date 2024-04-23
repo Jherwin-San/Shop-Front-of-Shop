@@ -4,26 +4,32 @@ import {
   TabsBody,
   Tab,
   TabPanel,
+  Button,
 } from "@material-tailwind/react";
+import { useContext } from "react";
+import { Review, UserRating } from "../../component";
+import UserContext from "../../UserContext";
+import { Link, useLocation } from "react-router-dom";
 
-export default function TabPane({ description }) {
+export default function TabPane({ description, productId }) {
+  const { user } = useContext(UserContext);
   const data = [
     {
       label: "Instructions",
       value: "html",
       desc: description.join("\n"),
     },
-    {
-      label: "Review",
-      value: "svelte",
-      desc: `
-    
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim itaque est excepturi necessitatibus expedita numquam, culpa facilis error molestiae illo porro unde sed blanditiis accusantium repudiandae quisquam corrupti id! 
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim itaque est excepturi necessitatibus expedita numquam, culpa facilis error molestiae illo porro unde sed blanditiis accusantium repudiandae quisquam corrupti id!
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim itaque est excepturi necessitatibus expedita numquam, culpa facilis error molestiae illo porro unde sed blanditiis accusantium repudiandae quisquam corrupti id!
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim itaque est excepturi necessitatibus expedita numquam, culpa facilis error molestiae illo porro unde sed blanditiis accusantium repudiandae quisquam corrupti id!
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim itaque est excepturi necessitatibus expedita numquam, culpa facilis error molestiae illo porro unde sed blanditiis accusantium repudiandae quisquam corrupti id!`,
-    },
+    // {
+    //   label: "Review",
+    //   value: "svelte",
+    //   desc: `
+
+    //   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim itaque est excepturi necessitatibus expedita numquam, culpa facilis error molestiae illo porro unde sed blanditiis accusantium repudiandae quisquam corrupti id!
+    //   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim itaque est excepturi necessitatibus expedita numquam, culpa facilis error molestiae illo porro unde sed blanditiis accusantium repudiandae quisquam corrupti id!
+    //   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim itaque est excepturi necessitatibus expedita numquam, culpa facilis error molestiae illo porro unde sed blanditiis accusantium repudiandae quisquam corrupti id!
+    //   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim itaque est excepturi necessitatibus expedita numquam, culpa facilis error molestiae illo porro unde sed blanditiis accusantium repudiandae quisquam corrupti id!
+    //   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim itaque est excepturi necessitatibus expedita numquam, culpa facilis error molestiae illo porro unde sed blanditiis accusantium repudiandae quisquam corrupti id!`,
+    // },
   ];
 
   return (
@@ -37,8 +43,24 @@ export default function TabPane({ description }) {
             {label}
           </Tab>
         ))}
+        <Tab value="vue">Reviews</Tab>
       </TabsHeader>
       <TabsBody className="w-full container">
+        <TabPanel
+          key={10}
+          value="vue"
+          className="text-pretty bg-white h-[12rem] overflow-x-scroll"
+        >
+          {user !== null ? (
+            <UserRating productId={productId} />
+          ) : (
+            <Button as={Link} to="/login">
+              Leave a comment
+            </Button>
+          )}
+
+          <Review productId={productId} />
+        </TabPanel>
         {data.map(({ value, desc }) => (
           <TabPanel
             key={value}

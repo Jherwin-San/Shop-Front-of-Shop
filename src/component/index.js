@@ -10,6 +10,8 @@ import RemoveFromCart from "./Buttons/RemoveFromCart"
 import SetAdmin from "./Buttons/SetAdmin"
 import StarRating from "./Buttons/StarRating"
 import TabPane from "./Buttons/TabPane"
+import UserRating from "./UserRating"
+import Review from "./Review"
 import UpdateProduct from "./Buttons/UpdateProduct"
 import ProductChild from "./ProductChild"
 import ProductView from "./ProductView"
@@ -37,6 +39,8 @@ export {
     SetAdmin,
     StarRating,
     TabPane,
+    Review,
+    UserRating,
     UpdateProduct,
     ProductChild,
     ProductView,
