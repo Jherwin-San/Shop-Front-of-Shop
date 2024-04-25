@@ -97,7 +97,7 @@ export default function ViewActiveProducts({ darkMode }) {
           return (
             <ProductChild
               key={product._id}
-              styleOut="2xl:w-[16rem] md:w-[13rem] w-[11rem] shadow-3xl shadow-nahida-500 dark:shadow-shogun-900 md:mt-12 mt-8 "
+              styleOut="2xl:w-[16rem] md:w-[13rem] w-[11rem] shadow-3xl shadow-nahida-500 dark:shadow-shogun-900 mt-8 "
               buttonColor="text-nahida-400"
               _id={product._id}
               name={product.name}
@@ -113,8 +113,8 @@ export default function ViewActiveProducts({ darkMode }) {
 
   return (
     <>
-      <div className="w-full overflow-x-hidden">
-        <div className="grid grid-flow-row">
+      <div className="w-full overflow-x-hidden ">
+        <div className="grid grid-flow-row ">
           <div className="w-full bg-pexel1 dark:bg-pexel2 object-cover bg-gray-600 dark:bg-gray-800 bg-blend-overlay ">
             <div className="flex items-center justify-center h-[12rem] backdrop-opacity-5">
               <h1 className="text-center py-10 font-bold lg:text-4xl text-2xl text-white  text-shadow-lg shadow-black">
